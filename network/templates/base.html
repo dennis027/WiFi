@@ -10,7 +10,10 @@
     <title>WiFi Network</title>
     {%endfor%}
 
-    {}
+    {%block style%}
+    {%bootstrap_css%}
+    <link rel="stylesheet" href="{% static 'base.css'%}">
+    {%endblock%}
 </head>
 <body>
     
