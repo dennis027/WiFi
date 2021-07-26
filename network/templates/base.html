@@ -1,3 +1,6 @@
+{%load bootstrap3%}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +11,11 @@
     <title>WiFi Network {{title}}</title>
     {%else%}
     <title>WiFi Network</title>
-    {%endfor%}
+    {%endif%}
 
     {%block style%}
-    {%bootstrap_css%}
-    <link rel="stylesheet" href="{% static 'base.css'%}">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
     {%endblock%}
 </head>
 <body>
