@@ -1,4 +1,82 @@
 {%extends 'base.html'%}
 {%block content%}
-<h1>hello</h1>
+{%load static%}
+
+<div class="container-fluid">
+    <div class="container-container">
+        <section class="landing">
+            <div id="overlay">
+                <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <div>
+                        <h1>KiNeTiK </h1>
+                        <h2> Welcome To Our Company Where we offer best internet Solutions at Low cost ,maximum bandwith</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <h1>SERVICES WE OFFER</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Configuration </h3>
+                <img src="{%static 'photos/conf.jpeg'%}" alt="" srcset="" id="p1">
+                <p class="pp1">The basic function of configuration management is managing the equipment in the network. This includes tracking and managing the equipment in the network including the management of software versions of the equipment.</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Performance monitoring</h3>
+                <img src="{%static 'photos/perfomance.jpeg'%}" alt="" srcset=""id="p2">
+                <p class="pp2">Performance monitoring is user response times if user asks any document or files the response time of the server would be noted and network throughput is determined how fast data is transferred through a network.</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Security management</h3>
+                <img src="{%static 'photos/security.jpeg'%}" alt="" srcset=""id="p3">
+                <p class="pp3">Security management is essential to network in order to ensure safety, prevent viruses and other threats by implementing antivirus software to prevent viruses entering in a network.</p>
+            </div>
+            <div class="col-md-3">
+                <h3>Network management</h3>
+                <img src="{%static 'photos/net.jpeg'%}" alt="" srcset=""id="p4">
+                <p class="pp4">Network management is the process of maintaining and organizing the active and passive network components. It will provide the services to maintain network components</p>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<style>
+    .landing {
+       
+    background-image: url("{%static 'photos/wifi2.jpg'%}");
+    background-size: 100%;
+  
+  background-position: center center;
+  background-color:  #ebebeb;
+  background-repeat: no-repeat; 
+    background-size: cover;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    background-position: center center;
+}
+
+#overlay {
+    top: 0;
+    bottom: 0;
+    padding: 8%;
+    font-size: 15px;
+    background-color: rgba(0, 0, 1, 0.5);
+    color: white;
+}
+
+#p1,#p2,#p3,#p4{
+    width: 100%;
+  height: auto;
+  border-radius: 60%;
+}
+.pp1,.pp2,.pp3,.pp4{
+    display: none;
+}
+    
+</style>
 {%endblock%}

@@ -33,7 +33,7 @@ def register(request):
 def logout_view(request):
     logout(request)
     return redirect('/')
-@login_required(login_url='/account/login')
+
 def index (request):
     return render(request, 'index.html')
 
