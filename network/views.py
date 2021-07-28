@@ -40,7 +40,7 @@ def index (request):
 @login_required(login_url='/accounts/login/')
 def profile(request):
     if request.method == 'POST':
-        p_form = ProfileUpdateForm(request.POST,request.FILES,instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
         u_form = UserUpdateForm(request.POST,instance=request.user)
 
         if p_form.is_valid() and u_form.is_valid():
@@ -49,7 +49,7 @@ def profile(request):
             # messages.success(request,'Your Profile has been updated!')
             return redirect('profile')
     else:
-        p_form = ProfileUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
         u_form = UserUpdateForm(instance=request.user)
 
     context={'p_form': p_form, 'u_form': u_form}
@@ -59,10 +59,17 @@ def review(request):
 
     return render(request, 'review.html')    
 
-def subscription(request):
+# def subscription(request):
     
 
-    return render(request, 'subscription.html')    
+#     return render(request, 'subscription.html')    
+
+def userpage(request):
+	user_form = UserUpdateForm(instance=request.user)
+	profile_form = ProfileUpdateForm(instance=request.user.profile)
+	return render(request=request, template_name="user.html", context={"user":request.user, "user_form":user_form, "profile_form":profile_form })
+
+
 
 
 @login_required(login_url='/accounts/login/') 
@@ -74,7 +81,7 @@ def newsubscription(request):
             subscriber = form.save(commit=False)
             subscriber.user = current_user
             subscriber.save()
-        return redirect('index')
+        return redirect('subscription')
     else:
         form = UserSubscriptionForm()
     return render(request, 'newsubscription.html',{'form':form}) 
