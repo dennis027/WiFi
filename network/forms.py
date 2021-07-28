@@ -32,3 +32,8 @@ class UserUpdateForm(forms.ModelForm):
        
         fields=['username','email']    
 
+class UserSubscriptionForm(forms.ModelForm):
+    class Meta:
+        model=Subscriber
+       
+        fields=['package','location']

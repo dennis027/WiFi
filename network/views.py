@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import *
-from .forms import ProfileUpdateForm, RegistrationForm, UserUpdateForm
+from .forms import ProfileUpdateForm, RegistrationForm, UserSubscriptionForm, UserUpdateForm
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -54,3 +54,27 @@ def profile(request):
 
     context={'p_form': p_form, 'u_form': u_form}
     return render(request, 'profile.html',context )
+
+def review(request):
+
+    return render(request, 'review.html')    
+
+def subscription(request):
+    
+
+    return render(request, 'subscription.html')    
+
+
+@login_required(login_url='/accounts/login/') 
+def newsubscription(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = UserSubscriptionForm(request.POST, request.FILES)
+        if form.is_valid():
+            subscriber = form.save(commit=False)
+            subscriber.user = current_user
+            subscriber.save()
+        return redirect('index')
+    else:
+        form = UserSubscriptionForm()
+    return render(request, 'newsubscription.html',{'form':form}) 

@@ -13,4 +13,9 @@ urlpatterns = [
     url('login/', auth_views.LoginView.as_view(), name='login'),
     url(r'^logout/$', views.logout_view, name='index'),
     url(r'profile/', views.profile, name='profile'),
+    url(r'review/', views.review, name='review'),
+    url(r'subscription/', views.subscription, name='subscription'),
+    url(r'newsubscription/', views.newsubscription, name='newsubscription'),
+    
+
 ]
