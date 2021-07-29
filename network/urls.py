@@ -17,7 +17,7 @@ urlpatterns = [
     # url(r'subscription/', views.subscription, name='subscription'),
     url(r'newsubscription/', views.newsubscription, name='newsubscription'),
     path("user", views.userpage, name = "userpage"),
-
+    url(r'^ajax/change/$', views.change, name='change')
 ]
 
 if settings.DEBUG:

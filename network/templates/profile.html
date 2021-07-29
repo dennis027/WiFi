@@ -9,6 +9,7 @@
     <div class="row">
        
         <div class="col-md-6 mt-4">
+          <h1>User Profile</h1>
             <img class="rounded-circle account-img d-block mx-auto" src="{{ user.user_image.url }}">
             <h2 class="text-center mt-3">{{user.username}}</h2>
             <h3 class="text-center ">{{user.bio}}</h3>
@@ -24,11 +25,12 @@
        
         <div class="col-md-6">
             {%for subscriber in subscribers%}
-            <h2>User Subscription</h2>
+            <h1>User Subscription</h1>
 
             <h3>Dear {{user.username|title}} subscription here is your subscription</h3>
             <h3>Bundle Speed {{subscriber.package}}</h3>
             <h4>Your Current Location is {{subscriber.location}}</h4>
+            <h5><em>We will contact you later to give you more information</em></h5>
             {%endfor%}
         </div>
        
@@ -43,9 +45,31 @@
 </div>
 <style>
     *{
-        background-color: antiquewhite;
-        color: black;
+        background-color: black;
+        color: white;
     }
-</style>    
+</style>   
+
+<script>
+    $(document).ready(function(){
+  $('form').submit(function(event){
+    event.preventDefault()
+    form = $("form")
+
+    $.ajax({
+      'url':'/ajax/newsletter/',
+      'type':'POST',
+      'data':form.serialize(),
+      'dataType':'json',
+      'success': function(data){
+        alert(data['success'])
+      },
+    })// END of Ajax method
+    $('#id_your_name').val('')
+    $("#id_email").val('')
+  }) // End of submit event
+
+}) // End of document ready function
+</script>
 
 {% endblock %}

@@ -1,13 +1,11 @@
 {%extends 'base.html'%}
-{%block style%}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-{%endblock%}
+
 {%block content%}
 {%load static%}
 
 
 
-
+{#  Single Card Template:#}
 <div class="container-fluid">
     <div class="container-container">
         <section class="landing">
@@ -55,81 +53,62 @@
     </div>
     <br><br>
     <h1>Our Packages</h1>
-
-    <br><br>
-    <div class=" container">
+    
+    <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                <div class="card-header" style="background-color:green;"><p>Ksh <h1>5000</h1></p><em>per month</em></div>
-                <div class="card-body">
-                    <div class="container">
-                    <h1><strong>30mbps</strong></h1>
-                    <br>
-                    <p>30 day access</p>
-                    <hr>
-                    <p>No hidden fee</p>
-                    <hr>
-                    <p>24/7 support</p>
-                    </div>
-                </div> 
-               <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
-            </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                <div class="card-header" style="background-color:green;"><p>Ksh <h1>10000</h1></p><em>per month</em></div>
-                <div class="card-body">
-                    <div class="container">
-                    <h1><strong>55mbps</strong></h1>
-                    <br>
-                    <p>30 day access</p>
-                    <hr>
-                    <p>No hidden fee</p>
-                    <hr>
-                    <p>24/7 support</p>
-                    </div>
-                </div> 
+            <div class="col-md-3" id="main">
+                <p>Ksh</p>
+                <h1>5000</h1>
+                <br>
+                <p><em>no hiden fee</em></p>
+                <br>
+                <h4>24/7 support</h4>
+                <br>
+                <h4>30mbps</h4>
+                <br>
                 <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                <div class="card-header" style="background-color:green;"><p>Ksh <h1>15000</h1></p><em>per month</em></div>
-                <div class="card-body">
-                    <div class="container">
-                    <h1><strong>80mbps</strong></h1>
-                    <br>
-                    <p>30 day access</p>
-                    <hr>
-                    <p>No hidden fee</p>
-                    <hr>
-                    <p>24/7 support</p>
-                    </div>
-                </div> 
+            <div class="col-md-3" id="main">
+                <p>Ksh</p>
+                <h1>10000</h1>
+                <br>
+                <p><em>no hiden fee</em></p>
+                <br>
+                <h4>24/7 support</h4>
+                <br>
+                <h4>55mbps</h4>
+                <br>
                 <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                <div class="card-header" style="background-color:green;"><p>Ksh <h1>20000</h1></p><em>per month</em></div>
-                <div class="card-body">
-                    <div class="container">
-                    <h1><strong>125mbps</strong></h1>
-                    <br>
-                    <p>30 day access</p>
-                    <hr>
-                    <p>No hidden fee</p>
-                    <hr>
-                    <p>24/7 support</p>
-                    </div>
-                </div> 
+            <div class="col-md-3" id="main">
+                <p>Ksh</p>
+                <h1>15000</h1>
+                <br>
+                <p><em>no hiden fee</em></p>
+                <br>
+                <h4>24/7 support</h4>
+                <br>
+                <h4>80mbps</h4>
+                <br>
                 <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
+            <div class="col-md-3" id="main">
+                <p>Ksh</p>
+                <h1>20000</h1>
+                <br>
+                <p><em>no hiden fee</em></p>
+                <br>
+                <h4>24/7 support</h4>
+                <br>
+                <h4>125mbps</h4>
+                <br>
+                <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
         </div>
+
     </div>
-</div>
+ 
+
 <br><br><br>
 <h1>Contact Us</h1>
 <div class="container">
@@ -155,6 +134,9 @@
             <img src="{% static 'images/flickr.png'%}">
         </div>
 <style>
+    #main{
+        border: 1px solid green;
+    }
     .landing {
     background-image: url("{%static 'photos/wifi2.jpg'%}");
     background-size: 100%;
@@ -195,6 +177,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 *{
     font-family: 'Gloria Hallelujah', cursive;
+}
+#package {
+    background-color: antiquewhite;
 }
     
 </style>

@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.utils.timezone import utc
-
+from django.http import JsonResponse
 from django.contrib.auth import logout
 
 # Create your views here.
@@ -87,3 +87,9 @@ def newsubscription(request):
     else:
         form = UserSubscriptionForm()
     return render(request, 'newsubscription.html',{'form':form}) 
+
+@login_required(login_url='/accounts/login/') 
+def change(request):
+    name = request.POST.get('your_name')
+    email = request.POST.get('email')
+    user= sss
