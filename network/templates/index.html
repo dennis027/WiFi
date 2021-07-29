@@ -32,22 +32,22 @@
         <div class="row">
             <div class="col-md-3">
                 <h3>Configuration </h3>
-                <btn><img src="{%static 'photos/conf.jpeg'%}" alt="" srcset="" id="p1"></btn>
+                <button class="btn1"><img src="{%static 'photos/conf.jpeg'%}" alt="" srcset="" id="p1" height=50%></button>
                 <p class="pp1">The basic function of configuration management is managing the equipment in the network. This includes tracking and managing the equipment in the network including the management of software versions of the equipment.</p>
             </div>
             <div class="col-md-3">
-                <h3>Performance monitoring</h3>
-                <img src="{%static 'photos/perfomance.jpeg'%}" alt="" srcset=""id="p2">
+                <h3> Monitoring</h3>
+                <button class="btn2"><img src="{%static 'photos/perfomance.jpeg'%}" alt="" srcset=""id="p2"></button>
                 <p class="pp2">Performance monitoring is user response times if user asks any document or files the response time of the server would be noted and network throughput is determined how fast data is transferred through a network.</p>
             </div>
             <div class="col-md-3">
                 <h3>Security management</h3>
-                <img src="{%static 'photos/security.jpeg'%}" alt="" srcset=""id="p3">
+                <button class="btn3"><img src="{%static 'photos/security.jpeg'%}" alt="" srcset=""id="p3"></button>
                 <p class="pp3">Security management is essential to network in order to ensure safety, prevent viruses and other threats by implementing antivirus software to prevent viruses entering in a network.</p>
             </div>
             <div class="col-md-3">
                 <h3>Network management</h3>
-                <img src="{%static 'photos/net.jpeg'%}" alt="" srcset=""id="p4">
+                <button class="btn4"><img src="{%static 'photos/net.jpeg'%}" alt="" srcset=""id="p4"></button>
                 <p class="pp4">Network management is the process of maintaining and organizing the active and passive network components. It will provide the services to maintain network components</p>
             </div>
 
@@ -198,20 +198,55 @@
 }
     
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-    $("#p1").click(function(){
+    $(".btn1").click(function(){
         $(".pp1").toggle(1000);
-        $("#p1").hide(1000);
+        $(".btn1").hide(1000);
        
     });
     $(".pp1").click(function(){
-        $("#p1").toggle(1000);
+        $(".btn1").toggle(1000);
         $(".pp1").hide(1000);
+
+    });
+
+    $(".btn2").click(function(){
+        $(".pp2").toggle(1000);
+        $(".btn2").hide(1000);
+       
+    });
+    $(".pp2").click(function(){
+        $(".btn2").toggle(1000);
+        $(".pp2").hide(1000);
+
+    });
+
+    $(".btn3").click(function(){
+        $(".pp3").toggle(1000);
+        $(".btn3").hide(1000);
+       
+    });
+    $(".pp3").click(function(){
+        $(".btn3").toggle(1000);
+        $(".pp3").hide(1000);
+
+    });
+
+    $(".btn4").click(function(){
+        $(".pp4").toggle(1000);
+        $(".btn4").hide(1000);
+       
+    });
+    $(".pp4").click(function(){
+        $(".btn4").toggle(1000);
+        $(".pp4").hide(1000);
 
     });
 
 })
 </script>
+
 {%endblock%}
 
