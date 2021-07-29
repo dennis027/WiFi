@@ -39,6 +39,7 @@ def index (request):
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
+    subscribers=Subscriber.objects.all()
     if request.method == 'POST':
         p_form = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
         u_form = UserUpdateForm(request.POST,instance=request.user)
@@ -52,12 +53,13 @@ def profile(request):
         p_form = ProfileUpdateForm(instance=request.user.profile)
         u_form = UserUpdateForm(instance=request.user)
 
-    context={'p_form': p_form, 'u_form': u_form}
+    context={'p_form': p_form, 'u_form': u_form,'subscribers':subscribers}
     return render(request, 'profile.html',context )
 
 def review(request):
+    subscribers=Subscriber.objects.all()
 
-    return render(request, 'review.html')    
+    return render(request, 'review.html',{"subscribers": subscribers})    
 
 # def subscription(request):
     
@@ -81,7 +83,7 @@ def newsubscription(request):
             subscriber = form.save(commit=False)
             subscriber.user = current_user
             subscriber.save()
-        return redirect('subscription')
+        return redirect('profile')
     else:
         form = UserSubscriptionForm()
     return render(request, 'newsubscription.html',{'form':form}) 

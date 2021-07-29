@@ -19,3 +19,6 @@ urlpatterns = [
     path("user", views.userpage, name = "userpage"),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

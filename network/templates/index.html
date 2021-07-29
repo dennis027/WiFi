@@ -7,12 +7,14 @@
 
 
 
+
 <div class="container-fluid">
     <div class="container-container">
         <section class="landing">
             <div id="overlay">
                 <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
-                    <div>
+                    <div></body>
+                        </html>
                         <h1>KiNeTiK </h1>
                         <h2> Welcome To Our Company Where we offer best internet Solutions at Low cost ,maximum bandwith</h2>
                     </div>
@@ -22,11 +24,15 @@
     </div>
     <br><br>
     <h1>SERVICES WE OFFER</h1>
+     
+    
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <h3>Configuration </h3>
-                <img src="{%static 'photos/conf.jpeg'%}" alt="" srcset="" id="p1">
+                <btn><img src="{%static 'photos/conf.jpeg'%}" alt="" srcset="" id="p1"></btn>
                 <p class="pp1">The basic function of configuration management is managing the equipment in the network. This includes tracking and managing the equipment in the network including the management of software versions of the equipment.</p>
             </div>
             <div class="col-md-3">
@@ -67,7 +73,7 @@
                     <p>24/7 support</p>
                     </div>
                 </div> 
-                <button type="button" class="btn btn-success">Subscribe</button>
+               <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
             </div>
             <div class="col-md-3">
@@ -84,7 +90,7 @@
                     <p>24/7 support</p>
                     </div>
                 </div> 
-                <button type="button" class="btn btn-success">Subscribe</button>
+                <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
             </div>
             <div class="col-md-3">
@@ -101,7 +107,7 @@
                     <p>24/7 support</p>
                     </div>
                 </div> 
-                <button type="button" class="btn btn-success">Subscribe</button>
+                <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
             </div>
             <div class="col-md-3">
@@ -118,7 +124,7 @@
                     <p>24/7 support</p>
                     </div>
                 </div> 
-                <button type="button" class="btn btn-success">Subscribe</button>
+                <a href="{% url 'newsubscription'%}"> <button type="button" class="btn btn-success">Subscribe</button></a>
             </div>
             </div>
         </div>
@@ -133,32 +139,21 @@
         <h3>Phone : 0706985617</h3>
         <br>
         <h3>Email : customercare@kinetik.com</h3>
-        <br>
-        <!-- <h3>Social Media Handles</h3>
-        <div class= "container">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="{% static 'photos/facebook.png'%}" alt="" srcset=""class="logo">
-                </div>
-                <div class="col-md-2">
-                    <img src="{% static 'photos/instagram.jpeg'%}" alt="" srcset=""class="logo">
-                </div>
-                <div class="col-md-2">
-                    <img src="{% static 'photos/pintest.png'%}" alt="" srcset=""class="logo">
-                </div>
-                <div class="col-md-2">
-                    <img src="{% static 'photos/telegram.png'%}" alt="" srcset=""class="logo">
-                </div>
-                <div class="col-md-2">
-                    <img src="{% static 'photos/twitter.jpeg'%}" alt="" srcset=""class="logo">
-                </div>
-                <div class="col-md-2">
-                    <img src="{% static 'photos/whatsapp.png'%}" alt="" srcset=""class="logo">
-                </div>
-            </div>
+        <br><br>
+
+        <h2>Social Media Handles</h2>
+
+        <div class="social">
+            <img src="{% static 'images/twitter.png'%} ">
+            <img src="{% static 'images/dribble.png'%}">
+            <img src="{% static 'images/facebook.png'%}">
+            <img src="{% static 'images/g_plus.png'%}">
+            <img src="{% static 'images/skype.png'%}">
+            <img src="{% static 'images/stumble_upon.png'%}">
+            <img src="{% static 'images/you_tube.png'%}">
+            <img src="{% static 'images/pinterest.png'%}">
+            <img src="{% static 'images/flickr.png'%}">
         </div>
-    </div>
-</div>     -->
 <style>
     .landing {
     background-image: url("{%static 'photos/wifi2.jpg'%}");
@@ -197,7 +192,26 @@
 .logo{
     border-radius: 70%;
 }
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+*{
+    font-family: 'Gloria Hallelujah', cursive;
+}
     
 </style>
+<script>
+    $(document).ready(function() {
+    $("#p1").click(function(){
+        $(".pp1").toggle(1000);
+        $("#p1").hide(1000);
+       
+    });
+    $(".pp1").click(function(){
+        $("#p1").toggle(1000);
+        $(".pp1").hide(1000);
+
+    });
+
+})
+</script>
 {%endblock%}
 

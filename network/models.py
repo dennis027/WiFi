@@ -23,12 +23,19 @@ class Profile(models.Model):
 
     
 
-class Subscriber(models.Model):
-    class Units(models.TextChoices):
 
-        KG ='KG','kg'
-        L='L','l'
-        First= '5000','5000'
+
+class Subscriber(models.Model):
+    __tablename__ = 'subscriber'
+
+    class Package(models.TextChoices):
+        first='30mbps', '30mbps',
+        second= '55mbps', '55mbps',
+        third='80mbps', '80mbps',
+        fourth='125mbps', '125mbps',
+            
+    
+   
     user = models.ForeignKey(User,on_delete= models.CASCADE)  
-    package= models.IntegerField(choices=Units.choices,default=Units.KG) 
+    package=models.CharField(max_length=255,choices=Package.choices ,default='25mbps')
     location= models.CharField(max_length=100)
